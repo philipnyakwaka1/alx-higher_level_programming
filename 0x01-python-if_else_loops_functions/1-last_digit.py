@@ -5,6 +5,8 @@ temp = number
 if temp < 0:
     temp *= -1
 last_digit = temp % 10
+if number < 0:
+    last_digit *= -1
 str1 = "and is less than 6 and not 0"
 if last_digit > 5:
     print(f"Last digit of {number} is {last_digit} and is greater than 5")
