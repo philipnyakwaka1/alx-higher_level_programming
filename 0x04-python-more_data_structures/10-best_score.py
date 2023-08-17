@@ -4,7 +4,7 @@ def best_score(a_dictionary):
         return None
     else:
         best_score = 0
-        student =""
+        student = ""
         for key, value in a_dictionary.items():
             if value > best_score:
                 best_score = value
