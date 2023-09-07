@@ -29,13 +29,6 @@ class Square:
         Args:
 
 
-A
-A
-A
-D
-D
-D
-C
             value: size of square to be set
         """
         if not isinstance(value, int):
