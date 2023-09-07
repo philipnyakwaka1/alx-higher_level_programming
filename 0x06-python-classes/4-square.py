@@ -11,7 +11,7 @@ class Square:
         Args:
             size: size of the square, which is initialized at 0
         """
-        self.size = size
+        self.__size = size
 
     @property
     def size(self):
@@ -27,6 +27,15 @@ class Square:
         """setter method to set size of square
 
         Args:
+
+
+A
+A
+A
+D
+D
+D
+C
             value: size of square to be set
         """
         if not isinstance(value, int):
