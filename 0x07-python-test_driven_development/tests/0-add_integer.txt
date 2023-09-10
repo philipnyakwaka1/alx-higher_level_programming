@@ -36,6 +36,10 @@ Now use it:
     Traceback (most recent call last):
       ...
     NameError: name 'Nan' is not defined
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+      ...
+    ValueError: cannot convert float NaN to integer
     >>> add_integer(None)
     Traceback (most recent call last):
       ...
