@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/bash/python3
 """This modules defines say_my_name"""
 
 
