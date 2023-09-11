@@ -14,8 +14,8 @@ class Rectangle():
             TypeError: if width and height is not an integer
             ValueError: if width and height is less than zero
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -23,16 +23,16 @@ class Rectangle():
         return self.__width
 
     @width.setter
-    def width(self, width):
+    def width(self, value):
         """This functions sets the width attribute
         Return:
             int: rectangle width
         """
-        if not isinstance(width, int):
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        if width < 0:
+        if value < 0:
             raise ValueError("width must be >= 0")
-        self.__width = width
+        self.__width = value
 
     @property
     def height(self):
@@ -40,13 +40,13 @@ class Rectangle():
         return self.__height
 
     @height.setter
-    def height(self, height):
+    def height(self, value):
         """This function sets the height attribute
         Return:
             int: rectangle height
         """
-        if not isinstance(height, int):
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        if height < 0:
+        if value < 0:
             raise ValueError("height must be >= 0")
-        self.__height = height
+        self.__height = value
