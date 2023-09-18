@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """This is module for Rectangle class"""
 
-from .modules.base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
     """This is the Rectangle class"""
 
-    def __init__(self, width, height, x=0, y=0, id):
+    def __init__(self, width, height, x=0, y=0, id=None):
         """This function initializes an instance of class Rectangle
             Args:
                 width: rectangle width
@@ -49,7 +49,7 @@ class Rectangle(Base):
 
             if not isinstance(value, int):
                 raise TypeError("height must be an integer")
-            if height <= 0:
+            if value <= 0:
                 raise ValueError("height must be > 0")
             self.__height = value
 
@@ -74,9 +74,9 @@ class Rectangle(Base):
             return self.__y
 
         @y.setter
-        def y(self, value)
-        """sets y attribute"""
+        def y(self, value):
+            """sets y attribute"""
 
-        if y < 0:
-            raise ValueError("y must be >= 0")
-        self.__y = value
+            if y < 0:
+                raise ValueError("y must be >= 0")
+            self.__y = value
