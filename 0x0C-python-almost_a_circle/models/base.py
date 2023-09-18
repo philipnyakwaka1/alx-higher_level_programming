@@ -12,15 +12,8 @@ class Base():
         Args:
             id: id attribute of the class
         """
-        if id:
+        if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-
-x = Base()
-print(x.id)
-x = Base(1)
-print(x.id)
-x = Base(-1)
-print(x.id)
