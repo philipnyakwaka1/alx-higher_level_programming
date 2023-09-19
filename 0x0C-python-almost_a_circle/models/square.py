@@ -1,4 +1,4 @@
-#!usr/bin/python3
+ #!/usr/bin/python3
 """This is module for class Square"""
 
 from models.rectangle import Rectangle
