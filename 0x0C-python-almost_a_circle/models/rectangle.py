@@ -21,62 +21,62 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
-        @property
-        def width(self):
-            """This function returns the rectangle width"""
+    @property
+    def width(self):
+        """This function returns the rectangle width"""
 
-            return self.__width
+        return self.__width
 
-        @width.setter
-        def width(self, value):
-            """This function sets the rectangle width"""
+    @width.setter
+    def width(self, value):
+        """This function sets the rectangle width"""
 
-            if not isinstance(value, int):
-                raise TypeError("width must be an integer")
-            if value <= 0:
-                raise ValueError("width must be > 0")
-            self.__width = value
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = value
 
-        @property
-        def height(self):
-            """This function returns the rectangle height"""
+    @property
+    def height(self):
+        """This function returns the rectangle height"""
 
-            return self.__height
+        return self.__height
 
-        @height.setter
-        def height(self, value):
-            """sets the height attribute"""
+    @height.setter
+    def height(self, value):
+        """sets the height attribute"""
 
-            if not isinstance(value, int):
-                raise TypeError("height must be an integer")
-            if value <= 0:
-                raise ValueError("height must be > 0")
-            self.__height = value
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
+        self.__height = value
 
-        @property
-        def x(self):
-            """returns the x attribute"""
+    @property
+    def x(self):
+        """returns the x attribute"""
 
-            return self.__x
+        return self.__x
 
-        @x.setter
-        def x(self, value):
-            """sets x attribute"""
+    @x.setter
+    def x(self, value):
+        """sets x attribute"""
 
-            if x < 0:
-                raise ValueError("x must be >= 0")
-            self.__x = value
+        if value < 0:
+            raise ValueError("x must be >= 0")
+        self.__x = value
 
-        @property
-        def y(self):
-            """returns y attribute"""
+    @property
+    def y(self):
+        """returns y attribute"""
 
-            return self.__y
+        return self.__y
 
-        @y.setter
-        def y(self, value):
-            """sets y attribute"""
+    @y.setter
+    def y(self, value):
+        """sets y attribute"""
 
-            if y < 0:
-                raise ValueError("y must be >= 0")
-            self.__y = value
+        if value < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = value
