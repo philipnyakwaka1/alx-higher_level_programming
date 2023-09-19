@@ -92,10 +92,10 @@ class Rectangle(Base):
     def display(self):
         """displays rectangle to stdout"""
 
-        for h in range(self.height):
-            for w in range(self.width):
-                print('#', end="")
+        for y in range(self.y):
             print()
+        for x in range(self.height):
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         """returns string representation of the object"""
