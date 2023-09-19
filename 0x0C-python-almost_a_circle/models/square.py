@@ -30,3 +30,18 @@ class Square(Rectangle):
         str1 = f"[Square] ({self.id}) {self.x}/{self.y}"
         str2 = f" - {self.size}"
         return str1 + str2
+
+    def update(self, *args, **kwargs):
+        """updates class Square"""
+
+        if args:
+            try:
+                self.id = args[0]
+                self.size = args[1]
+                self.x = args[2]
+                self.y = args[3]
+            except Exception as ex:
+                pass
+        else:
+            for key, value in kwargs.items():
+                self.__setattr__(key, value)
