@@ -3,6 +3,7 @@
 
 import json
 import csv
+import turtle
 
 
 class Base():
@@ -114,3 +115,40 @@ class Base():
         except Exception as ex:
             pass
         return objects
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Draw Rectangles and Squares using the turtle module.
+        Args:
+            list_rectangles (list): A list of Rectangle objects to draw.
+            list_squares (list): A list of Square objects to draw.
+        """
+
+        t = turtle.Turtle()
+
+        t.speed(5)
+        turtle.bgcolor("#DEB887")
+
+        def draw_rectangle(width, height):
+            for _ in range(2):
+                t.forward(width)
+                t.left(90)
+                t.forward(height)
+                t.left(90)
+
+        for rectangle in list_rectangles:
+            t.penup()
+            t.goto(t.xcor() + 50, t.ycor() + 50)
+            t.pendown()
+            draw_rectangle(rectangle.width, rectangle.height)
+
+        def draw_square(side_length):
+            for _ in range(4):
+                t.forward(side_length)
+                t.left(90)
+
+        for square in list_squares:
+            t.penup()
+            t.goto(t.xcor() - 50, t.ycor() - 50)
+            t.pendown()
+            draw_square(square.size)
