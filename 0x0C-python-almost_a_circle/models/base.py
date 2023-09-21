@@ -61,3 +61,18 @@ class Base():
             if hasattr(new, "update") and callable(getattr(new, "update")):
                 new.update(**dictionary)
             return new
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+
+        filename = cls.__name__ + ".json"
+        instances = []
+        try:
+            with open(filename, "r", encoding="utf-8") as f:
+                json_string = f.read()
+                dictionaries = cls.from_json_string(json_string)
+                instances = [cls.create(**data) for data in dictionaries]
+        except Exception as ex:
+            pass
+        return instances
