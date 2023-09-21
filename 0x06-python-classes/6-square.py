@@ -30,11 +30,9 @@ class Square:
         Args:
             value: value of position to be set
         """
-        if not isinstance(value, tuple) or len(value) != 2:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if not all(isinstance(i, int) for i in value):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if any(i < 0 for i in value):
+        if (not isinstance(value, tuple) or len(value) != 2 or
+            not all(isinstance(i, int) for i in value) or
+                any(i < 0 for i in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
