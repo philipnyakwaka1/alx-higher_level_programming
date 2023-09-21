@@ -3,10 +3,11 @@
 
 
 class Square():
-    """This is class square
-        Args:
-            size: square size
-    """
+    """This is class square"""
 
     def __init__(self, size):
+        """ Initializes square
+            Args:
+                size: square size
+        """
         self.__size__ = size
