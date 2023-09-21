@@ -2,6 +2,7 @@
 """This is a module for the Base clase"""
 
 import json
+import csv
 
 
 class Base():
@@ -76,3 +77,40 @@ class Base():
         except Exception as ex:
             pass
         return instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes data in CSV"""
+
+        filename = cls.__name__ + ".csv"
+        if list_objs is None or len(list_objs) == 0:
+            return "[]"
+
+        if cls.__name__ == "Rectangle":
+            fields = ["id", "width", "height", "x", "y"]
+        elif cls.__name__ == "Square":
+            fields = ["id", "size", "x", "y"]
+
+        with open(filename, "w", newline="", encoding="utf-8") as csv_file:
+            writer = csv.DictWriter(csv_file, fieldnames=fields)
+            writer.writeheader()
+            for obj in list_objs:
+                data = obj.to_dictionary()
+                writer.writerow(data)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserializes CSV"""
+
+        filename = cls.__name__ + ".csv"
+        objects = []
+        try:
+            with open(filename, "r", encoding="utf-8", newline="") as csv_file:
+                reader = csv.DictReader(csv_file)
+                for row in reader:
+                    row = {key: int(value) for key, value in row.items()}
+                    obj = cls.create(**row)
+                    objects.append(obj)
+        except Exception as ex:
+            pass
+        return objects
