@@ -11,8 +11,8 @@ class Square:
         Args:
             size: size of the square, which is initialized at 0
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def position(self):
@@ -25,10 +25,14 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if (not isinstance(value, tuple) or
-                len(value) != 2 or
-                not all(isinstance(num, int) for num in value) or
-                not all(num >= 0 for num in value)):
+        """setter method to set the position value
+
+        Args:
+            value: value of position to be set
+        """
+        if (not isinstance(value, tuple) or len(value) != 2 or
+            not all(isinstance(i, int) for i in value) or
+                not all(i >= 0 for i in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
