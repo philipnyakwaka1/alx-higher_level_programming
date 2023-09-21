@@ -118,10 +118,10 @@ class Base():
 
     @staticmethod
     def draw(list_rectangles, list_squares):
-        """Draw Rectangles and Squares using the turtle module.
+        """This function uses turtle module to Rectangles and Squares
         Args:
-            list_rectangles (list): A list of Rectangle objects to draw.
-            list_squares (list): A list of Square objects to draw.
+            list_rectangles: A list of Rectangle objects
+            list_squares: A list of Square objects
         """
 
         t = turtle.Turtle()
