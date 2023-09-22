@@ -32,3 +32,26 @@ List with negative numbers:
 >>> print(type(a))
 <class 'NoneType'>
 
+
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append(2)
+>>> my_list.append(-1)
+>>> my_list.append(5)
+>>> my_list.append(0)
+>>> my_list.print_sorted()
+[-1, 0, 2, 5]
+>>> my_list
+[2, -1, 5, 0]
+>>> print(my_list)
+[2, -1, 5, 0]
+>>> my_list.print_sorted()
+[-1, 0, 2, 5]
+>>> print(my_list)
+[2, -1, 5, 0]
+
+>>> my_list.print_sorted().__str__
+[-1, 0, 2, 5]
+<method-wrapper '__str__' of NoneType object at 0x957cc0>
+
+
