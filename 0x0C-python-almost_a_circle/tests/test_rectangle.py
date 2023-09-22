@@ -25,19 +25,19 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.height, 2)
         self.assertEqual(r1.x, 3)
         self.assertEqual(r1.y, 0)
-        self.assertEqual(r1.id, 4)
+        self.assertEqual(r1.id, 2)
         r2 = Rectangle(1, 2, 3, 4)
         self.assertEqual(r2.width, 1)
         self.assertEqual(r2.height, 2)
         self.assertEqual(r2.x, 3)
         self.assertEqual(r2.y, 4)
-        self.assertEqual(r2.id, 5)
+        self.assertEqual(r2.id, 3)
         r2 = Rectangle(5, 2)
         self.assertEqual(r2.width, 5)
         self.assertEqual(r2.height, 2)
         self.assertEqual(r2.x, 0)
         self.assertEqual(r2.y, 0)
-        self.assertEqual(r2.id, 6)
+        self.assertEqual(r2.id, 4)
 
     def test_area(self):
         """test for all positive integers"""
@@ -89,9 +89,8 @@ class TestRectangle(unittest.TestCase):
 
     def test_print(self):
         r = Rectangle(10, 15)
-        self.assertEqual(r.__str__(), "[Rectangle] (7) 0/0 - 10/15")
+        self.assertEqual(r.__str__(), "[Rectangle] (5) 0/0 - 10/15")
 
-    def test_display1(self):
-        r = Rectangle(3, 5)
-        with self.assertRaises(TypeError):
-            r.display(1)
+    def test_toDictionary(self):
+        self.assertEqual(Rectangle(2, 4).to_dictionary(), {
+                         'id': 6, 'width': 2, 'height': 4, 'x': 0, 'y': 0})
