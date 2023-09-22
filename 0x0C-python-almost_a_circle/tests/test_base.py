@@ -31,3 +31,8 @@ class TestBase(unittest.TestCase):
 
         test_object = Base(0)
         self.assertEqual(test_object.id, 0)
+
+    def test_baseToString(self):
+        self.assertEqual(Base.to_json_string(None), "[]")
+        self.assertEqual(Base.to_json_string([]), "[]")
+        self.assertEqual(Base.to_json_string([{'id': 5}]), [{"id": 5}])
