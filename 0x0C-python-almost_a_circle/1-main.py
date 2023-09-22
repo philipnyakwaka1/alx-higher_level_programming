@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """ 1-main """
-from models.square import Square
+from models.base import Base
 
 if __name__ == "__main__":
-    r = Square.create(
-        **{'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
-    print(r.to_dictionary())
+    if type(Base.to_json_string([{'id': 12}])) is str:
+        print("Hey")

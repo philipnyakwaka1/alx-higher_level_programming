@@ -33,6 +33,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(test_object.id, 0)
 
     def test_baseToString(self):
+        self.assertEqual(type(Base.to_json_string([{'id': 12}])), str)
         self.assertEqual(Base.to_json_string(None), "[]")
         self.assertEqual(Base.to_json_string([]), "[]")
         self.assertEqual(Base.to_json_string([{'id': 5}]), '[{"id": 5}]')
