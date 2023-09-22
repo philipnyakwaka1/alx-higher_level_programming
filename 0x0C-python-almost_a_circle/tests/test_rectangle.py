@@ -136,3 +136,6 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(Rectangle.load_from_file(), [])
         Rectangle.save_to_file([])
         self.assertEqual(Rectangle.load_from_file(), [])
+        a = Rectangle.save_to_file([Rectangle(1, 2)])
+        b = Rectangle.load_from_file()
+        self.assertEqual(len(b), 1)
