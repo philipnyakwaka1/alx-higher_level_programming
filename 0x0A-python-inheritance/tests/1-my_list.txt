@@ -50,8 +50,3 @@ List with negative numbers:
 >>> print(my_list)
 [2, -1, 5, 0]
 
->>> my_list.print_sorted().__str__
-[-1, 0, 2, 5]
-<method-wrapper '__str__' of NoneType object at 0x957cc0>
-
-
