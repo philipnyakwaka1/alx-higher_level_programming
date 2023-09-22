@@ -18,6 +18,18 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.x, 1)
         self.assertEqual(r.y, 2)
         self.assertEqual(r.id, 3)
+        r1 = Rectangle(1, 2, 3)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 3)
+        self.assertEqual(r1.y, 0)
+        self.assertEqual(r1.id, 3)
+        r2 = Rectangle(1, 2, 3, 4)
+        self.assertEqual(r2.width, 1)
+        self.assertEqual(r2.height, 2)
+        self.assertEqual(r2.x, 3)
+        self.assertEqual(r2.y, 4)
+        self.assertEqual(r2.id, 4)
 
     def test_area(self):
         """test for all positive integers"""
@@ -42,6 +54,10 @@ class TestRectangle(unittest.TestCase):
             r = Rectangle(5, 10, -1, 2, 3)
         with self.assertRaises(ValueError):
             r = Rectangle(5, 10, 1, -2, 3)
+        with self.assertRaises(ValueError):
+            r = Rectangle(5, 0)
+        with self.assertRaises(ValueError):
+            r = Rectangle(0, 7)
 
     def test_instance(self):
         """Tests if a rectangle instance is instance of Base"""
