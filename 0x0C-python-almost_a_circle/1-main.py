@@ -3,5 +3,6 @@
 from models.rectangle import Rectangle
 
 if __name__ == "__main__":
-    r = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
-    print(r.to_dictionary())
+    a = Rectangle.save_to_file([Rectangle(1, 2, 3, 6, 9)])
+    b = Rectangle.load_from_file()
+    print(b)
