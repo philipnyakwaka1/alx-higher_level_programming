@@ -94,3 +94,29 @@ class TestRectangle(unittest.TestCase):
     def test_toDictionary(self):
         self.assertEqual(Rectangle(2, 4, 0, 0, 5).to_dictionary(), {
                          'id': 5, 'width': 2, 'height': 4, 'x': 0, 'y': 0})
+
+    def test_update(self):
+        r = Rectangle(2, 4, 0, 0, 5)
+        r.update()
+        self.assertEqual(r.to_dictionary(), {
+                         'id': 5, 'width': 2, 'height': 4, 'x': 0, 'y': 0})
+        r = Rectangle(2, 4, 0, 0, 5)
+        r.update(90)
+        self.assertEqual(r.to_dictionary(), {
+                         'id': 90, 'width': 2, 'height': 4, 'x': 0, 'y': 0})
+        r = Rectangle(2, 4, 0, 0, 5)
+        r.update(90, 2)
+        self.assertEqual(r.to_dictionary(), {
+                         'id': 90, 'width': 2, 'height': 4, 'x': 0, 'y': 0})
+        r = Rectangle(2, 4, 0, 0, 5)
+        r.update(90, 2, 5)
+        self.assertEqual(r.to_dictionary(), {
+                         'id': 90, 'width': 2, 'height': 5, 'x': 0, 'y': 0})
+        r = Rectangle(2, 4, 0, 0, 5)
+        r.update(90, 2, 5, 6)
+        self.assertEqual(r.to_dictionary(),
+                         {'id': 90, 'width': 2, 'height': 5, 'x': 6, 'y': 0})
+        r = Rectangle(2, 4, 0, 0, 5)
+        r.update(90, 2, 5, 6, 8)
+        self.assertEqual(r.to_dictionary(),
+                         {'id': 90, 'width': 2, 'height': 5, 'x': 6, 'y': 8})
