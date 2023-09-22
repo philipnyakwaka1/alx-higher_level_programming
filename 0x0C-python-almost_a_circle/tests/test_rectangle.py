@@ -120,3 +120,13 @@ class TestRectangle(unittest.TestCase):
         r.update(90, 2, 5, 6, 8)
         self.assertEqual(r.to_dictionary(),
                          {'id': 90, 'width': 2, 'height': 5, 'x': 6, 'y': 8})
+        r = Rectangle(2, 4, 0, 0, 5)
+        r.update(**{'id': 89})
+        self.assertEqual(r.to_dictionary(),
+                         {'id': 89, 'width': 2, 'height': 4, 'x': 0, 'y': 0})
+
+    def test_create(self):
+        r = Rectangle.create(
+            **{'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
+        self.assertEqual(r.to_dictionary(),
+                         {'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
