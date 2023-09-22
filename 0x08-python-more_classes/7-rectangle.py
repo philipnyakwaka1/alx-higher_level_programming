@@ -66,7 +66,7 @@ class Rectangle(object):
         my_string = ""
         for i in range(self.__height):
             for j in range(self.__width):
-                my_string += str(Rectangle.print_symbol)
+                my_string += str(self.print_symbol)
             my_string += "\n"
         return my_string[:-1]
 
