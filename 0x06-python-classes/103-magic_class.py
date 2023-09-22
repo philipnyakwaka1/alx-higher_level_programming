@@ -10,7 +10,7 @@ class MagicClass(object):
     def __init__(self, radius=0):
         """initializes radius"""
         if not isinstance(radius, int) and not isinstance(radius, float):
-            raise TypeError('radius needs to be a number')
+            raise TypeError('radius must be a number')
         self.__radius = float(radius)
 
     def area(self):
