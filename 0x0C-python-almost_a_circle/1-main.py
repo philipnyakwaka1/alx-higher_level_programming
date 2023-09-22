@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """ 1-main """
-from models.rectangle import Rectangle
+from models.square import Square
 
 if __name__ == "__main__":
-    a = Rectangle.save_to_file([Rectangle(1, 2)])
-    b = Rectangle.load_from_file()
-    print(len(b))
+    r = Square.create(
+        **{'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
+    print(r.to_dictionary())

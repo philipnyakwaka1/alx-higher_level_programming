@@ -3,6 +3,7 @@
 
 from models.base import Base
 from models.square import Square
+from models.rectangle import Rectangle
 import unittest
 
 
@@ -56,3 +57,56 @@ class TestRectangle(unittest.TestCase):
     def test_negativeWidth(self):
         with self.assertRaises(ValueError):
             print(Square(-5, 10, 1, 3).size)
+
+    def test_print(self):
+        r17 = Square(10, 15)
+        self.assertEqual(type(r17.__str__()), str)
+
+    def test_toDictionary(self):
+        self.assertEqual(Square(2, 4, 0, 0).to_dictionary(), {
+                         'id': 0, 'size': 2, 'x': 4, 'y': 0})
+
+    def test_update(self):
+        r = Square(2, 4, 0, 0)
+        r.update()
+        self.assertEqual(r.to_dictionary(),
+                         {'id': 0, 'size': 2, 'x': 4, 'y': 0})
+        r = Square(2, 4, 0, 0)
+        r.update(90)
+        self.assertEqual(r.to_dictionary(), {
+                         'id': 90, 'size': 2, 'x': 4, 'y': 0})
+        r = Square(2, 4, 0, 0)
+        r.update(90, 2)
+        self.assertEqual(r.to_dictionary(), {
+                         'id': 90, 'size': 2, 'x': 4, 'y': 0})
+        r = Square(2, 4, 0, 0)
+        r.update(90, 2, 5)
+        self.assertEqual(r.to_dictionary(), {
+                         'id': 90, 'size': 2, 'x': 5, 'y': 0})
+        r = Square(2, 4, 0, 0)
+        r.update(90, 2, 5, 6)
+        self.assertEqual(r.to_dictionary(),
+                         {'id': 90, 'size': 2, 'x': 5, 'y': 6})
+        r = Square(2, 4, 0, 0)
+        r.update(**{'id': 89})
+        self.assertEqual(r.to_dictionary(),
+                         {'id': 89, 'size': 2, 'x': 4, 'y': 0})
+
+    def test_create(self):
+        r = Square.create(
+            **{'id': 89, 'size': 1, 'x': 3, 'y': 4})
+        self.assertEqual(r.to_dictionary(),
+                         {'id': 89, 'size': 1, 'x': 3, 'y': 4})
+
+    def test_saveToFile(self):
+        Square.save_to_file(None)
+        self.assertEqual(Square.load_from_file(), [])
+        Square.save_to_file([])
+        self.assertEqual(Square.load_from_file(), [])
+        a = Square.save_to_file([Square(1)])
+        b = Square.load_from_file()
+        self.assertEqual(len(b), 1)
+
+    def test_loadEmpty(self):
+        b = Square.load_from_file()
+        self.assertEqual(len(b), 1)

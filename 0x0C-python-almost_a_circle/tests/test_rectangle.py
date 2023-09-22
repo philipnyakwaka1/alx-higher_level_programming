@@ -139,3 +139,7 @@ class TestRectangle(unittest.TestCase):
         a = Rectangle.save_to_file([Rectangle(1, 2)])
         b = Rectangle.load_from_file()
         self.assertEqual(len(b), 1)
+
+    def test_loadEmpty(self):
+        b = Rectangle.load_from_file()
+        self.assertEqual(len(b), 1)
