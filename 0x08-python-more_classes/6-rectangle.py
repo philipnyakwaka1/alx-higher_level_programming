@@ -79,4 +79,4 @@ class Rectangle(object):
         """prints a string when deletion occurs"""
 
         print("Bye rectangle...")
-        Rectangle.number_of_instances -= 0
+        Rectangle.number_of_instances -= 1
