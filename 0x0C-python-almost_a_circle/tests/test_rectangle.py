@@ -92,5 +92,5 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(type(r17.__str__()), str)
 
     def test_toDictionary(self):
-        r18 = Rectangle(2, 4)
-        self.assertEqual(type(r18.to_dictionary()), dict)
+        self.assertEqual(Rectangle(2, 4, 0, 0, 5).to_dictionary(), {
+                         'id': 5, 'width': 2, 'height': 4, 'x': 0, 'y': 0})

@@ -4,4 +4,4 @@ from models.rectangle import Rectangle
 
 if __name__ == "__main__":
 
-    print(Rectangle(2, 4).to_dictionary())
+    print(Rectangle(2, 4, 0, 0, 5).to_dictionary())
