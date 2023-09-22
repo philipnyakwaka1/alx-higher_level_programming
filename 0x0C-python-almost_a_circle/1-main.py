@@ -1,12 +1,10 @@
 #!/usr/bin/python3
 """ 1-main """
 from models.rectangle import Rectangle
+import io
+import sys
 
 if __name__ == "__main__":
 
-    r1 = Rectangle(0, 2)
-    print(r1.width)
-    print(r1.height)
-    print(r1.x)
-    print(r1.y)
-    print("id:", r1.id)
+    r = Rectangle(2, 3, 0, 0, 0)
+    capture = TestRectangle_stdout.capture_stdout(r, "display")
