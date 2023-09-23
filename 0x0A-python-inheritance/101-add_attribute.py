@@ -2,8 +2,9 @@
 """module for add_attribute"""
 
 
-def add_attribute(obj, attr_name, attr_value):
+def add_attribute(obj, attribute_name, attribute_value):
+    """adds a new attribute to an object if it’s possible:"""
     if hasattr(obj, '__dict__') is True:
-        obj.__dict__[attr_name] = attr_value
+        setattr(obj, attribute_name, attribute_value)
     else:
         raise TypeError("can't add new attribute")
