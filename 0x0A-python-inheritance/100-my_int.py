@@ -1,14 +1,15 @@
 #!/usr/bin/python3
+"""module for MyInt"""
 
 
 class MyInt(int):
     """Defines class MyInt"""
-    def __eq__(self, other):
+    def __eq__(self, val):
         """overide =="""
 
-        return super().__ne__(other)
+        return self.real != val
 
-    def __ne__(self, other):
+    def __ne__(self, val):
         """overide !="""
 
-        return super().__eq__(other)
+        return self.real == val
