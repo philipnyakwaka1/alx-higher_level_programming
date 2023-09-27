@@ -31,5 +31,5 @@ class Student():
 
         if type(attrs) == list and all(type(item) == str for item in attrs):
             my_dict = {}
-            return {item: getattr(self, item) for item in attrs if hasattr(self, item)}
+            return {i: getattr(self, i) for i in attrs if hasattr(self, i)}
         return self.__dict__
