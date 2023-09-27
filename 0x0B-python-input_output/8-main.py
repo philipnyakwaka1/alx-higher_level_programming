@@ -6,6 +6,7 @@ m = MyClass("John")
 m.number = 89
 print(type(m))
 print(m)
+print(m.__dict__)
 
 mj = class_to_json(m)
 print(type(mj))
