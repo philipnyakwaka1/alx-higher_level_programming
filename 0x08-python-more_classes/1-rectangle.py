@@ -23,7 +23,7 @@ class Rectangle():
         """property decorator for retrieving rectangle width"""
 
         return self.__width
-    
+
     @width.setter
     def width(self, width):
         """sets rectangle width"""
@@ -39,6 +39,7 @@ class Rectangle():
         """property decorator for retrieving rectangle height"""
 
         return self.__height
+
     @height.setter
     def height(self, height):
         """sets rectangle height"""
