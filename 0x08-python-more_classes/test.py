@@ -1,0 +1,10 @@
+ls = ["My", "Name", "is", "Philip"]
+my_name = '\n'.join(ls)
+print(my_name)
+print(type(my_name))
+my_name_new = my_name.split('\n')
+print(my_name_new)
+print(type(my_name_new))
+name = " ".join(my_name_new)
+print(name)
+print(type(name))
