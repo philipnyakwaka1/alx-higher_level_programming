@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """This is module for Rectangle class"""
 
-from models.base import Base
+from BACKUP.models.base import Base
 
 
 class Rectangle(Base):
