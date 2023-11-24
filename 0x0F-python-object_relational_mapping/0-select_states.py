@@ -12,7 +12,7 @@ if __name__ == '__main__':
         passwd=sys.argv[2], db=sys.argv[3], port=3306)
     cursor = db.cursor()
     cursor.execute(
-        "SELECT states.id, states.name FROM states ORDER BY states.id ASC;")
+        "SELECT * FROM states ORDER BY states.id ASC;")
     result = cursor.fetchall()
     for i in result:
         print(i)
