@@ -11,8 +11,8 @@ if __name__ == '__main__':
                          passwd=sys.argv[2], db=sys.argv[3], port=3306)
     cursor = db.cursor()
     cursor.execute(
-        f'SELECT * FROM states WHERE states.name\
-          LIKE BINARY "{sys.argv[4]}" ORDER BY states.id ASC;')
+        'SELECT * FROM states WHERE states.name\
+          LIKE BINARY "{}" ORDER BY states.id ASC;'.format(sys.argv[4]))
     results = cursor.fetchall()
     for i in results:
         print(i)
