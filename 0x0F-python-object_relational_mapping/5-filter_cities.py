@@ -16,11 +16,12 @@ if __name__ == '__main__':
             = states.id WHERE states.name LIKE %s\
             ORDER BY cities.id ASC;", ('%' + input_value + '%', ))
     results = cursor.fetchall()
-    if len(results) == 0:
-        print('\n')
+
+    if not results:
+        print()
     else:
-        for i in results:
-            my_list = [i[0] for i in results]
-        print(f'{", ".join(my_list)}')
+        city_names = [result[0] for result in results]
+        print(', '.join(city_names))
+
     cursor.close()
     db.close()
