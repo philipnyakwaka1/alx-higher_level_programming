@@ -5,22 +5,19 @@
 import sys
 import MySQLdb
 
-if __name__ == '__main__':
-    db = MySQLdb.connect(host='localhost', user=sys.argv[1],
-                         passwd=sys.argv[2], db=sys.argv[3], port=3306)
-    input_value = sys.argv[4]
-    cursor = db.cursor()
-    cursor.execute(
-        "SELECT cities.name FROM cities\
-            INNER JOIN states ON cities.state_id\
-            = states.id WHERE states.name LIKE %s\
-            ORDER BY cities.id ASC;", ('%' + input_value + '%', ))
-    results = cursor.fetchall()
-    if len(results) == 0:
-        print()
-    else:
-        for i in results:
-            my_list = [i[0] for i in results]
-        print(f'{", ".join(my_list)}')
-    cursor.close()
-    db.close()
+import sys
+import MySQLdb
+from sqlalchemy import create_engine, Integer, String, Column
+from sqlalchemy.orm import declarative_base
+
+engine = create_engine(f'mysql+mysqldb://{sys.argv[1]}:{sys.argv[2]}\
+                    @localhost/{sys.argv[3]}', pool_pre_ping=True)
+Base = declarative_base()
+
+
+class State(Base):
+    """This class links to MySQL table states"""
+
+    __tablename__ = 'states'
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
+    name = Column(String(128), nullable=False)
