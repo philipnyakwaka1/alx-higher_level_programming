@@ -1,23 +1,18 @@
 #!/usr/bin/python3
-"""This module lists all cities from the database hbtn_0e_4_usa
 """
+Contains State class and Base, an instance of declarative_base()
+"""
+from sqlalchemy import Column, Integer, String, MetaData
+from sqlalchemy.ext.declarative import declarative_base
 
-import sys
-import MySQLdb
-
-import sys
-import MySQLdb
-from sqlalchemy import create_engine, Integer, String, Column
-from sqlalchemy.orm import declarative_base
-
-engine = create_engine(f'mysql+mysqldb://{sys.argv[1]}:{sys.argv[2]}\
-                    @localhost/{sys.argv[3]}', pool_pre_ping=True)
-Base = declarative_base()
+mymetadata = MetaData()
+Base = declarative_base(metadata=mymetadata)
 
 
 class State(Base):
-    """This class links to MySQL table states"""
-
+    """
+    Class with id and name attributes of each state
+    """
     __tablename__ = 'states'
-    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
+    id = Column(Integer, unique=True, nullable=False, primary_key=True)
     name = Column(String(128), nullable=False)
