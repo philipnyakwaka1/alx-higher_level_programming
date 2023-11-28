@@ -1,3 +1,4 @@
+"""Document this module"""
 #!/usr/bin/python3
 """
 This module contains the class definition of a State
