@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module contains the class definition State
+"""This module lists all cities from the database hbtn_0e_4_usa
 """
 
 import MySQLdb
