@@ -6,11 +6,17 @@ from model_state import Base, State
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 import sys
+from urllib.parse import quote
 
-engine = create_engine(f'mysql+mysqldb://{sys.argv[1]}:{sys.argv[2]}@localhost/{sys.argv[3]}')
-Session = sessionmaker(engine)
-session = Session()
+if __name__ == '__main__':
+    engine = create_engine(
+        f'mysql+mysqldb://{sys.argv[1]}:\
+        {quote(sys.argv[2])}@localhost/{sys.argv[3]}')
+    Session = sessionmaker(engine)
+    session = Session()
 
-for state in session.query(State).from_statement(text("SELECT states.id, states.name\
-    FROM states ORDER BY states.id ASC").columns(State.id, State.name)):
-    print (f'{state.id}: {state.name}')
+    for state in session.query(State).\
+        from_statement(text("SELECT states.id, states.name\
+            FROM states ORDER BY states.id ASC")
+                       .columns(State.id, State.name)):
+        print(f'{state.id}: {state.name}')
