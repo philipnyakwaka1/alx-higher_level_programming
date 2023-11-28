@@ -1,10 +1,7 @@
 #!/usr/bin/python3
-
 """
-This module contains the class definition of a State
-and an instance Base = declarative_base()
+Contains State class and Base, an instance of declarative_base()
 """
-
 import MySQLdb
 from sqlalchemy import create_engine, Integer, String, Column
 from sqlalchemy.orm import declarative_base
