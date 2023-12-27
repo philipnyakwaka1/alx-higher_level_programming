@@ -2,5 +2,6 @@
 """Python script that fetches https://alx-intranet.hbtn.io/status"""
 from urllib import request
 import sys
-with request.urlopen(sys.argv[1]) as response:
+url = sys.argv[1]
+with request.urlopen(url) as response:
     print(response.headers)
