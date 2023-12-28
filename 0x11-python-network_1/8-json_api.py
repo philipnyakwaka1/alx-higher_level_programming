@@ -16,6 +16,6 @@ if __name__ == '__main__':
             print('No result')
         else:
             print(f'[{response.json().get("id")}]
-                  {response.json().get("name")}')
+                   {response.json().get("name")}')
     except Exception as e:
         print('Not a valid JSON')
