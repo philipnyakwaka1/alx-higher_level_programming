@@ -15,6 +15,6 @@ if __name__ == '__main__':
         if len(response.json()) == 0:
             print('No result')
         else:
-            print(f'[{response.get("id")}] {response.get("name")}')
+            print(f'[{response.json().get("id")}] {response.json().get("name")}')
     except Exception as e:
         print('Not a valid JSON')
