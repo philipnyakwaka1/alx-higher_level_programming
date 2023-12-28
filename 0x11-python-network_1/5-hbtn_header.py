@@ -9,5 +9,5 @@ import requests
 
 if __name__ == '__main__':
     response = requests.get(sys.argv[1])
-    if response.headers['X-Request-Id'] is not None:
-        print(response.headers['X-Request-Id'])
+    if response.headers.get('X-Request-Id') is not None:
+        print(response.headers.get('X-Request-Id'))
