@@ -8,13 +8,14 @@ import sys
 import requests
 
 if __name__ == '__main__':
-    l = sys.argv[1] if len(sys.argv) > 1 else ""
-    value = {'q': l}
+    ltr = sys.argv[1] if len(sys.argv) > 1 else ""
+    value = {'q': ltr}
     response = requests.post('http://0.0.0.0:5000/search_user', data=value)
     try:
         if len(response.json()) == 0:
             print('No result')
         else:
-            print(f'[{response.json().get("id")}] {response.json().get("name")}')
+            print(f'[{response.json().get("id")}]
+                  {response.json().get("name")}')
     except Exception as e:
         print('Not a valid JSON')
