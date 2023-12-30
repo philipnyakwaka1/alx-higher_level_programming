@@ -23,5 +23,5 @@ if __name__ == '__main__':
         for user in results:
             print(user.id)
     else:
-        print("Not Found")
+        print("Not found")
     session.close()
