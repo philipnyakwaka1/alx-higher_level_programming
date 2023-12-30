@@ -11,7 +11,7 @@ from urllib.parse import quote
 import sys
 
 if __name__ == '__main__':
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}/3306'
                            .format(quote(sys.argv[1]), quote(sys.argv[2]),
                                    quote(sys.argv[3])), pool_pre_ping=True)
     Base.metadata.create_all(engine)
