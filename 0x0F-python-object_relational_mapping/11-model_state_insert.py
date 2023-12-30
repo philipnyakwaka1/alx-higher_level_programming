@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-script that lists all State objects that contain
-the letter a from the database hbtn_0e_6_usa
+script that adds the State object “Louisiana”
+to the database hbtn_0e_6_usa
 """
 
 from model_state import Base, State
@@ -23,4 +23,5 @@ if __name__ == '__main__':
         new_state = State(name='Louisiana')
         session.add(new_state)
         session.commit()
+        print(new_state.id)
     session.close()
