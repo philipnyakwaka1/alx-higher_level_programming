@@ -21,5 +21,5 @@ if __name__ == '__main__':
     if len(qry) > 0:
         for state in qry:
             session.delete(state)
-            session.commit()
+    session.commit()
     session.close()
