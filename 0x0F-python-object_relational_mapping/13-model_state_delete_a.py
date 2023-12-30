@@ -18,7 +18,6 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
     qry = session.query(State).filter(State.name.like('%a%')).all()
-    print(qry)
     if len(qry) > 0:
         for state in qry:
             session.delete(state)
