@@ -19,4 +19,6 @@ if __name__ == '__main__':
     query_object = session.query(State).first()
     if query_object is not None:
         print(f'{query_object.id}: {query_object.name}')
+    else:
+        print("Nothing")
     session.close()
