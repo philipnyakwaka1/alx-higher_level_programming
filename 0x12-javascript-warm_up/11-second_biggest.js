@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const vector = process.argv;
-if (vector.length === 2 || vector.length == 3) {
+if (vector.length === 2 || vector.length === 3) {
   console.log(0);
 } else {
   const myArray = [];
