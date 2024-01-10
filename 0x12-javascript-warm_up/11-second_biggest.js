@@ -1,8 +1,7 @@
 #!/usr/bin/node
-const argv = process.argv;
-if (argv.length === undefined || argv.length === 2) {
-  console.log(0);
-} else {
-  const newArgv = Array.from(argv).sort().slice(2);
-  console.log(newArgv[newArgv.length - 2]);
+const myArray = [];
+const argv = process.argv.splice(2);
+for (let i = 0; i < argv.length; i++) {
+  myArray.push(parseInt(argv[i]));
 }
+console.log(myArray.sort((a, b) => b - a)[1]);
