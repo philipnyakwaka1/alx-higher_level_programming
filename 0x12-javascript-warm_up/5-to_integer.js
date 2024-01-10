@@ -4,7 +4,7 @@ try {
   if (isNaN(number)) {
     throw new Error('Not a Number');
   }
-  console.log(number);
+  console.log('My number:', number);
 } catch (error) {
   console.error(error.message);
 }
