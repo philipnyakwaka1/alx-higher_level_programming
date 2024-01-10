@@ -51,5 +51,8 @@ for user in session.query(User).order_by(User.id):
     # lastname='Nyakwaka', age=25).first()
 # session.delete(existing_user)
 # session.commit()
+my_list = [User]
+for i in my_list:
+    qry = session.query(i).all()
 
 session.close()
