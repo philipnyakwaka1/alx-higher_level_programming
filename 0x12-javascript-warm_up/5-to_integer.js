@@ -6,5 +6,5 @@ try {
   }
   console.log('My number:', number);
 } catch (error) {
-  console.error(error.message);
+  console.log(error.message);
 }
