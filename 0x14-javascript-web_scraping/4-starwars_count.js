@@ -8,9 +8,8 @@ async function getTitle () {
     for (let i = 0; i < movies.length; i++) {
       const characters = movies[i].characters;
       for (let j = 0; j < characters.length; j++) {
-        if (
-          characters[j] === 'https://swapi-api.alx-tools.com/api/people/18/'
-        ) {
+        const regexID = /\/18\//;
+        if (regexID.test(characters[j])) {
           count++;
         }
       }
