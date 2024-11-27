@@ -1,4 +1,4 @@
--- list all genres of the show Dexter
+-- list all Comedy shows in the database hbtn_0d_tvshows
 SELECT tv_shows.title AS title
 FROM tv_shows
 INNER JOIN tv_show_genres
