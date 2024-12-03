@@ -4,4 +4,4 @@
 for c in range(97, 123):
     char = chr(c)
     if char != 'q' and char != 'e':
-        print(char, end="")
+        print("{}".format(char), end="")
