@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """Check for lowercase"""
+
+
 def islower(c):
     """Check for lowercase"""
     if type(c) == str:
