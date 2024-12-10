@@ -2,6 +2,7 @@
 """Class Node"""
 
 class Node:
+    """Node class"""
     def __init__(self, data, next_node=None):
         """initialize"""
         self.data = data
